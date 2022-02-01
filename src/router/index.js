@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { LoginCallback, navigationGuard } from '@okta/okta-vue'
 import Home from '../views/Home.vue'
 import Profile from '../components/Profile.vue'
+import Messages from '../components/Messages.vue'
 
 const routes = [
   {
@@ -21,6 +22,13 @@ const routes = [
   {
     path: '/profile',
     component: Profile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/messages',
+    component: Messages,
     meta: {
       requiresAuth: true
     }
