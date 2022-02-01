@@ -16,7 +16,7 @@ export default defineComponent({
   name: 'app',
   methods: {
     async login () {
-      await this.$auth.signInWithRedirect()
+      await this.$auth.signInWithRedirect({ originalUri: '/' })
     },
     async logout () {
       await this.$auth.signOut()
